@@ -105,7 +105,7 @@
 					"slug": "80"
 				}
 			],
-			"units": ["%", "px", "em", "rem", "vh", "vw"]
+			"units": [ "%", "px", "em", "rem", "vh", "vw" ]
 		},
 		"typography": {
 			"defaultFontSizes": false,
@@ -119,43 +119,57 @@
 							"fontFamily": "Mukta",
 							"fontStyle": "normal",
 							"fontWeight": "200",
-							"src": ["file:./assets/fonts/mukta_normal_200.ttf"]
+							"src": [
+								"file:./assets/fonts/mukta_normal_200.ttf"
+							]
 						},
 						{
 							"fontFamily": "Mukta",
 							"fontStyle": "normal",
 							"fontWeight": "300",
-							"src": ["file:./assets/fonts/mukta_normal_300.ttf"]
+							"src": [
+								"file:./assets/fonts/mukta_normal_300.ttf"
+							]
 						},
 						{
 							"fontFamily": "Mukta",
 							"fontStyle": "normal",
 							"fontWeight": "400",
-							"src": ["file:./assets/fonts/mukta_normal_400.ttf"]
+							"src": [
+								"file:./assets/fonts/mukta_normal_400.ttf"
+							]
 						},
 						{
 							"fontFamily": "Mukta",
 							"fontStyle": "normal",
 							"fontWeight": "500",
-							"src": ["file:./assets/fonts/mukta_normal_500.ttf"]
+							"src": [
+								"file:./assets/fonts/mukta_normal_500.ttf"
+							]
 						},
 						{
 							"fontFamily": "Mukta",
 							"fontStyle": "normal",
 							"fontWeight": "600",
-							"src": ["file:./assets/fonts/mukta_normal_600.ttf"]
+							"src": [
+								"file:./assets/fonts/mukta_normal_600.ttf"
+							]
 						},
 						{
 							"fontFamily": "Mukta",
 							"fontStyle": "normal",
 							"fontWeight": "700",
-							"src": ["file:./assets/fonts/mukta_normal_700.ttf"]
+							"src": [
+								"file:./assets/fonts/mukta_normal_700.ttf"
+							]
 						},
 						{
 							"fontFamily": "Mukta",
 							"fontStyle": "normal",
 							"fontWeight": "800",
-							"src": ["file:./assets/fonts/mukta_normal_800.ttf"]
+							"src": [
+								"file:./assets/fonts/mukta_normal_800.ttf"
+							]
 						}
 					]
 				},
@@ -167,55 +181,73 @@
 							"fontFamily": "Inter",
 							"fontStyle": "normal",
 							"fontWeight": "100",
-							"src": ["file:./assets/fonts/inter_normal_100.ttf"]
+							"src": [
+								"file:./assets/fonts/inter_normal_100.ttf"
+							]
 						},
 						{
 							"fontFamily": "Inter",
 							"fontStyle": "normal",
 							"fontWeight": "200",
-							"src": ["file:./assets/fonts/inter_normal_200.ttf"]
+							"src": [
+								"file:./assets/fonts/inter_normal_200.ttf"
+							]
 						},
 						{
 							"fontFamily": "Inter",
 							"fontStyle": "normal",
 							"fontWeight": "300",
-							"src": ["file:./assets/fonts/inter_normal_300.ttf"]
+							"src": [
+								"file:./assets/fonts/inter_normal_300.ttf"
+							]
 						},
 						{
 							"fontFamily": "Inter",
 							"fontStyle": "normal",
 							"fontWeight": "400",
-							"src": ["file:./assets/fonts/inter_normal_400.ttf"]
+							"src": [
+								"file:./assets/fonts/inter_normal_400.ttf"
+							]
 						},
 						{
 							"fontFamily": "Inter",
 							"fontStyle": "normal",
 							"fontWeight": "500",
-							"src": ["file:./assets/fonts/inter_normal_500.ttf"]
+							"src": [
+								"file:./assets/fonts/inter_normal_500.ttf"
+							]
 						},
 						{
 							"fontFamily": "Inter",
 							"fontStyle": "normal",
 							"fontWeight": "600",
-							"src": ["file:./assets/fonts/inter_normal_600.ttf"]
+							"src": [
+								"file:./assets/fonts/inter_normal_600.ttf"
+							]
 						},
 						{
 							"fontFamily": "Inter",
 							"fontStyle": "normal",
 							"fontWeight": "700",
-							"src": ["file:./assets/fonts/inter_normal_700.ttf"]
+							"src": [
+								"file:./assets/fonts/inter_normal_700.ttf"
+							]
 						},
 						{
 							"fontFamily": "Inter",
 							"fontStyle": "normal",
 							"fontWeight": "800",
-							"src": ["file:./assets/fonts/inter_normal_800.ttf"]
+							"src": [
+								"file:./assets/fonts/inter_normal_800.ttf"
+							]
 						},
 						{
 							"fontFamily": "Inter",
 							"fontStyle": "normal",
 							"fontWeight": "900",
-							"src": ["file:./assets/fonts/inter_normal_900.ttf"]
+							"src": [
+								"file:./assets/fonts/inter_normal_900.ttf"
+							]
 						}
 					]
 				}
@@ -938,37 +970,37 @@
 		{
 			"title": "Blank",
 			"name": "blank",
-			"postTypes": ["page", "post"]
+			"postTypes": [ "page", "post" ]
 		},
 		{
 			"title": "Page (with both sidebar)",
 			"name": "page-both-sidebar",
-			"postTypes": ["page"]
+			"postTypes": [ "page" ]
 		},
 		{
 			"title": "Page (with left sidebar)",
 			"name": "page-left-sidebar",
-			"postTypes": ["page"]
+			"postTypes": [ "page" ]
 		},
 		{
 			"title": "Page (with right sidebar)",
 			"name": "page-right-sidebar",
-			"postTypes": ["page"]
+			"postTypes": [ "page" ]
 		},
 		{
 			"title": "Single (with both sidebar)",
 			"name": "single-both-sidebar",
-			"postTypes": ["post"]
+			"postTypes": [ "post" ]
 		},
 		{
 			"title": "Single (with left sidebar)",
 			"name": "single-left-sidebar",
-			"postTypes": ["post"]
+			"postTypes": [ "post" ]
 		},
 		{
 			"title": "Single (with right sidebar)",
 			"name": "single-right-sidebar",
-			"postTypes": ["post"]
+			"postTypes": [ "post" ]
 		}
 	],
 	"templateParts": [

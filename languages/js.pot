@@ -1,0 +1,8 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"X-Generator: babel-plugin-makepot\n"
+
+#: src/hamburger-menu-overlay/edit.js:35
+msgid "Hamburger Menu Overlay – hello from the editor!"
+msgstr ""
