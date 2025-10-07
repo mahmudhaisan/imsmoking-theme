@@ -1,0 +1,28 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "product-endless/show",
+  "version": "0.1.0",
+  "title": "Product Endless Show",
+  "category": "design",
+  "icon": {
+  "src": "cart"
+},
+  "description": "Displays WooCommerce products with endless scroll (infinite loading).",
+  "keywords": ["products", "woocommerce", "infinite", "endless", "ajax"],
+  "example": {},
+  "supports": {
+    "html": false,
+    "align": ["wide", "full"],
+    "spacing": { "margin": true, "padding": true },
+    "color": { "text": true, "background": true, "gradients": true },
+    "typography": { "fontSize": true, "lineHeight": true, "__experimentalFontFamily": true },
+    "shadow": true
+  },
+  "textdomain": "product-endless-show",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view.js"
+}

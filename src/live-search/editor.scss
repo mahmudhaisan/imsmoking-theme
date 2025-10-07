@@ -1,0 +1,26 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+
+.header-search {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+
+	/* remove default button-like styles */
+	background: none !important;
+	border: none !important;
+	padding: 0;
+	margin: 0;
+
+	.svg-icon {
+		width: 24px;
+		height: 24px;
+		fill: currentColor; /* inherits text color */
+		display: block;
+	}
+}

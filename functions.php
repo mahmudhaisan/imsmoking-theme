@@ -83,3 +83,27 @@ function imsmoking_theme_hamburger_menu_overlay_block_init() {
 	}
 }
 add_action( 'init', 'imsmoking_theme_hamburger_menu_overlay_block_init' );
+
+
+
+add_action('rest_api_init', function() {
+    register_rest_field('product', 'featured_media_url', [
+        'get_callback' => function($object) {
+            $id = $object['featured_media'];
+            return $id ? wp_get_attachment_url($id) : '';
+        },
+        'schema' => null,
+    ]);
+});
+
+
+
+
+
+
+
+add_action('wp_enqueue_scripts', function() {
+    if (function_exists('is_woocommerce')) {
+        wp_enqueue_script('wc-cart-fragments');
+    }
+});

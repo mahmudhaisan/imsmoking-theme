@@ -1,41 +1,77 @@
-/**
- * Retrieves the translation of text.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
- */
-import { __ } from '@wordpress/i18n';
-
-/**
- * React hook that is used to mark the block wrapper element.
- * It provides all the necessary props like the class name.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
- */
-import { useBlockProps } from '@wordpress/block-editor';
-
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
+import { useBlockProps, InspectorControls } from '@wordpress/block-editor';
+import { PanelBody, SelectControl } from '@wordpress/components';
+import { useSelect } from '@wordpress/data';
+import { useState } from '@wordpress/element';
 import './editor.scss';
 
-/**
- * The edit function describes the structure of your block in the context of the
- * editor. This represents what the editor will render when the block is used.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
- *
- * @return {Element} Element to render.
- */
-export default function Edit() {
+export default function Edit( { attributes, setAttributes } ) {
+	const { menu } = attributes;
+	const blockProps = useBlockProps();
+	const [ isOpen, setIsOpen ] = useState( false );
+
+	// Fetch WP menus
+	const menus = useSelect(
+		( select ) =>
+			select( 'core' ).getEntityRecords( 'taxonomy', 'nav_menu' ),
+		[]
+	);
+
 	return (
-		<p { ...useBlockProps() }>
-			{ __(
-				'Hamburger Menu Overlay – hello from the editor!',
-				'hamburger-menu-overlay'
-			) }
-		</p>
+		<div { ...blockProps }>
+			<InspectorControls>
+				<PanelBody title="Menu Settings">
+					<SelectControl
+						label="Select Menu"
+						value={ menu }
+						options={ ( menus || [] ).map( ( m ) => ( {
+							label: m.name,
+							value: m.id,
+						} ) ) }
+						onChange={ ( value ) =>
+							setAttributes( { menu: value } )
+						}
+					/>
+				</PanelBody>
+			</InspectorControls>
+
+			{/* Hamburger Icon */}
+			<div className="hamburger-menu-container">
+				<button
+					className={ `hamburger-icon ${
+						isOpen ? 'is-active' : ''
+					}` }
+					onClick={ () => setIsOpen( ! isOpen ) }
+					aria-label="Toggle menu"
+				>
+					<div className="bar"></div>
+					<div className="bar"></div>
+					<div className="bar"></div>
+				</button>
+			</div>
+
+			{/* Overlay */}
+			<div
+				className={ `hamburger-menu-overlay ${
+					isOpen ? 'is-active' : ''
+				}` }
+			>
+				{/* Close Button */}
+				<button
+					className="close-menu-button"
+					onClick={ () => setIsOpen( false ) }
+					aria-label="Close menu"
+				>
+					&times;
+				</button>
+
+				<nav className="hamburger-menu-nav">
+					{ menu ? (
+						<p>Menu will render on frontend</p>
+					) : (
+						<p>Select a menu</p>
+					) }
+				</nav>
+			</div>
+		</div>
 	);
 }

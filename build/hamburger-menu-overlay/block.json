@@ -4,12 +4,26 @@
   "name": "imsmoking-theme/hamburger-menu-overlay",
   "version": "0.1.0",
   "title": "Hamburger Menu Overlay",
-  "category": "widgets",
-  "icon": "smiley",
-  "description": "Example block scaffolded with Create Block tool.",
+  "category": "design",
+  "icon": "menu",
+  "description": "A responsive hamburger menu with overlay functionality",
   "example": {},
   "supports": {
-    "html": false
+    "html": false,
+    "align": [
+      "wide",
+      "full"
+    ]
+  },
+  "attributes": {
+    "menu": {
+      "type": "string",
+      "default": ""
+    },
+    "menuItems": {
+      "type": "array",
+      "default": []
+    }
   },
   "textdomain": "hamburger-menu-overlay",
   "editorScript": "file:./index.js",

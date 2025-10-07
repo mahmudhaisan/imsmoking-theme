@@ -1,16 +1,214 @@
 /*!**************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/hamburger-menu-overlay/style.scss ***!
   \**************************************************************************************************************************************************************************************************************************************************************/
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
-.wp-block-imsmoking-theme-hamburger-menu-overlay {
-  background-color: #21759b;
-  color: #fff;
-  padding: 2px;
+@charset "UTF-8";
+.wp-block-imsmoking-theme-hamburger-menu-overlay .hamburger-menu-container {
+  position: relative;
+  z-index: 100; /* default above overlay */
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22px;
+  height: 19px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 101;
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .hamburger-icon .bar {
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  transition: all 0.3s ease-in-out;
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .hamburger-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 550px;
+  max-width: 90vw;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: left 0.5s cubic-bezier(0.86, 0, 0.07, 1);
+  z-index: 102; /* above container */
+  display: flex;
+  flex-direction: column;
+  /* ✅ full overlay scroll */
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 70px 0 20px 100px; /* top for header, bottom for footer */
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .hamburger-menu-overlay.is-active {
+  left: 0;
+  padding-right: 80px;
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .hamburger-menu-header {
+  flex: 0 0 auto;
+  padding: 20px 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .menu-close {
+  background: none;
+  border: none;
+  font-size: 45px;
+  cursor: pointer;
+  padding: 0;
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .hamburger-menu-nav {
+  transition: transform 0.5s ease;
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .hamburger-menu-nav.menu-main {
+  transform: translateX(0);
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .hamburger-menu-nav.menu-main.menu-out {
+  transform: translateX(-100%);
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .hamburger-menu-nav.menu-submenu {
+  transform: translateX(100%);
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .hamburger-menu-nav.menu-submenu.active {
+  transform: translateX(0);
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .menu-back-header {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 16px 0px;
+  background-color: #fff;
+  z-index: 10;
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .menu-back-header .menu-back {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding-right: 10px;
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .menu-back-header .menu-title {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .hamburger-menu,
+.wp-block-imsmoking-theme-hamburger-menu-overlay .submenu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .menu-item {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .menu-item a {
+  display: block;
+  color: #000;
+  text-decoration: none;
+  font-size: 26px;
+  flex: 1;
+  transition: background-color 0.2s;
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .menu-item a:hover {
+  background-color: #f4f4f4;
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .submenu-toggle {
+  padding: 15px 20px;
+  cursor: pointer;
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .hamburger-menu-footer {
+  flex-shrink: 0; /* always at bottom */
+  flex: 0 0 auto;
+  font-size: 14px;
+}
+.wp-block-imsmoking-theme-hamburger-menu-overlay .hamburger-menu-footer hr {
+  border: none;
+  border-top: 3px solid #000;
+  margin-bottom: 12px;
+}
+
+.menu-main,
+.menu-submenu {
+  display: none;
+}
+
+.menu-main.active,
+.menu-submenu.active {
+  display: block;
+}
+
+.menu-main.hidden {
+  display: none;
+}
+
+.menu-level-wrapper.hamburger-menu-content {
+  padding: 50px 0;
+}
+
+.menu-item.has-children > .menu-link {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.menu-item.has-children > .menu-link::after {
+  content: "›";
+  font-size: 30px;
+  font-weight: 100;
+  color: #000000;
+  margin-left: auto;
+}
+
+.menu-main,
+.menu-submenu {
+  width: 100%;
+  transition: transform 0.5s cubic-bezier(0.86, 0, 0.07, 1), opacity 0.3s ease;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1; /* default behind active submenu */
+}
+
+/* Main menu active */
+.menu-main.active {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2; /* active menu above */
+}
+
+/* Main menu sliding out */
+.menu-main.menu-out {
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Submenu hidden by default */
+.menu-submenu {
+  transform: translateX(100%);
+  opacity: 0;
+  z-index: 3; /* always above main menu */
+}
+
+/* Submenu active */
+.menu-submenu.active {
+  transform: translateX(0);
+  opacity: 1;
+  pointer-events: auto;
 }
 
 /*# sourceMappingURL=style-index.css.map*/

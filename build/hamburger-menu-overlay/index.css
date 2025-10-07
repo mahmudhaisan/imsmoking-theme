@@ -1,13 +1,102 @@
 /*!***************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/hamburger-menu-overlay/editor.scss ***!
   \***************************************************************************************************************************************************************************************************************************************************************/
+@charset "UTF-8";
 /**
  * The following styles get applied inside the editor only.
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-imsmoking-theme-hamburger-menu-overlay {
-  border: 1px dotted #f00;
+/* Style for the main container */
+.hamburger-menu-container {
+  position: relative;
+  z-index: 100;
+}
+
+/* Hamburger icon styling */
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 101; /* Ensure the button is clickable */
+}
+.hamburger-icon .bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333;
+  transition: all 0.3s ease-in-out; /* Smooth transition for the bars */
+}
+
+/* Active state for the icon (transforms to a cross) */
+.hamburger-icon.is-active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger-icon.is-active .bar:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.hamburger-icon.is-active .bar:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Overlay and menu styling */
+.hamburger-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: -100%; /* Initially off-screen to the left */
+  width: 700px; /* Adjust as needed */
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: left 0.5s cubic-bezier(0.86, 0, 0.07, 1); /* Elegant transition */
+  z-index: 99;
+}
+.hamburger-menu-overlay.is-active {
+  left: 0; /* Slide into view */
+}
+
+.hamburger-menu-nav {
+  padding-top: 60px; /* Space for the header */
+}
+.hamburger-menu-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.hamburger-menu-nav li a {
+  display: block;
+  padding: 15px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+}
+.hamburger-menu-nav li a:hover {
+  background-color: #f4f4f4;
+}
+
+/* Close (×) button inside the overlay */
+.close-menu-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+  z-index: 101;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.close-menu-button:hover {
+  transform: scale(1.2);
+  color: #000;
 }
 
 /*# sourceMappingURL=index.css.map*/
